@@ -1,0 +1,130 @@
+.body{
+  background-color:black;
+}
+.larger{
+      display: flex;
+      align-items: flex-start;
+      gap:200px;
+    }
+    .album-cover{
+      z-index:2;
+      width: 250px;
+      height: 250px;
+      object-fit:cover;
+      position: absolute;
+      left:5px;
+    }
+    .vinyl-disc{
+      z-index:1;
+      width: 250px;
+      height:250px;
+      animation: spin 5s linear infinite;
+      position:absolute;
+      top: 0px;
+      right:140px;
+      border-radius:50%;
+      border-color: black;
+      object-fit:cover;
+    }
+    @keyframes spin{
+      to { transform: rotate(0deg);}
+      from{
+        transform: rotate(360deg);
+      }
+    }
+.tracklist-wrapper{
+  Font-Family: Times New Roman;
+  font-size: 20px;
+  color:white;
+}
+.ep-container{
+  position:relative;
+  width:260px;
+  height:260px;
+}
+.name{
+  text-align:center;
+      font-size:55px;
+      font-family:century gothic;
+      font-weight:300;
+      color:white;
+}
+.bio{
+  text-align: center;
+  font-size:35px;
+  font-family:comic sans;
+  font-weight:250;
+  color:white;
+}
+.art{
+       width: 320px;
+      height: 320px;
+      border-radius: 50%;
+      border: 8px double white;
+      object-fit: cover;
+      background-color: black;
+      margin-right: 20px;
+  color:white;
+    }
+.words{
+  text-align:center;
+  font-family:Comic sans;
+  font-size:25px;
+  color:white;
+}
+.recent{
+  text-align:left;
+  font-familly:Arial narrow;
+ font-size:25px;
+  font-weight:350;
+  color:white;
+}
+.social-media-platforms{
+  display:flex;
+  margin:45px auto;
+  font-size:35px;
+  gap:22px;
+  width:fit-content;
+}
+.notes{
+  font-family:times new roman;
+  font-size:25px;
+  color:white;
+}
+.carousel-container{
+  width:100%;
+  margin:40px auto;
+  overflow:hidden;
+  border-radius:10px;
+  cursor:grab;
+}
+.carousel-track{
+  display:flex;
+  gap:10px;
+  transition: transform 0.3s ease;
+}
+.before{
+   width: 65%;
+   max-width:65%;
+  flex-shrink:0;
+  border-radius:15px;
+}
+.overlay{
+  color:white;
+  font-family: arial;
+  font-size:15px;
+  font-weight:15px;
+}
+.way{
+   width: 65%;
+   max-width:65%;
+  flex-shrink:0;
+  border-radius:15px;
+}
+
+.island{
+  width: 65%;
+   max-width:65%;
+  flex-shrink:0;
+  border-radius: 25px;
+}
