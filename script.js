@@ -1,3 +1,4 @@
+<script>
 const track = document.querySelector('.carousel-track');
   let isDown = false;
   let startX;
@@ -28,3 +29,4 @@ const track = document.querySelector('.carousel-track');
     const walk = (x - startX) * 1.5; // speed multiplier
     track.scrollLeft = scrollLeft - walk;
   });
+</script>
