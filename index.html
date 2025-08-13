@@ -91,24 +91,49 @@
         <h3>Love Island</h3>
       </div>
     </div>
-
   </div>
 </div
     <!--Social media tags will use icons-->
     <div class="social-media-platforms">
       <!--instagram-->
       <a href="https://instagram.com/@killa.magiciivn" class="social-icon" target="_blank">
-  <i class="fab fa-instagram"></i></a>
+  <i class="fab-bands fa-instagram"></i></a>
       <!--Tik Tok account-->
         <a href="https://www.tiktok.com/@radbroko" target="_blank" class="social-icon">
-  <i class="fab fa-tiktok"></i></a>
+  <i class="fab-bands fa-tiktok"></i></a>
 <!--Audiomack account-->      
 <a href="https://audiomack.com/RAD-BROKO" target="_blank" class="social-icon">
-  <i class="fas fa-music"></i></a>
+  <i class="fab-bands fa-music"></i></a>
   <!--Work email-->
-      <a href="bradleyndaba280@gmail.com" class="social-icon">
-  <i class="fas fa-envelope"></i></a>
+      <a href="mailto:bradleyndaba280@gmail.com" class="social-icon">
+  <i class="fab-bands fa-envelope"></i></a>
     </div>
-   <script src="script.js></script>"
+   <script src="script.js">
+     const albumCards = document.querySelectorAll('.image-card');
+    let currentIndex = 0;
+    let shuffleInterval;
+
+    function showAlbum(index) {
+      albumCards.forEach((card, i) => {
+        card.classList.toggle('active', i === index);
+      });
+    }
+
+    function startShuffle() {
+      shuffleInterval = setInterval(() => {
+        currentIndex = (currentIndex + 1) % albumCards.length;
+        showAlbum(currentIndex);
+      }, 2000);
+    }
+
+    function stopShuffle() {
+      clearInterval(shuffleInterval);
+    }
+
+    document.querySelector('.carousel-container').addEventListener('mouseenter', startShuffle);
+    document.querySelector('.carousel-container').addEventListener('mouseleave', stopShuffle);
+
+    showAlbum(currentIndex);
+   </script>
   </body>
 </html>
