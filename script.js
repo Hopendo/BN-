@@ -1,32 +1,41 @@
 <script>
-const track = document.querySelector('.carousel-track');
-  let isDown = false;
-  let startX;
-  let scrollLeft;
+  const cards = document.querySelectorAll('.album-card'); // Select each album image wrapper
+  let currentIndex = 0;
 
-  // Mouse and Touch Drag
-  track.addEventListener('mousedown', (e) => {
-    isDown = true;
-    track.classList.add('active');
-    startX = e.pageX - track.offsetLeft;
-    scrollLeft = track.scrollLeft;
-  });
+  function showCard(index) {
+    cards.forEach((card, i) => {
+      if (i === index) {
+        card.style.transform = 'translateX(0) scale(1)';
+        card.style.opacity = '1';
+        card.style.zIndex = '10';
+      } else if (i < index) {
+        card.style.transform = 'translateX(-100%) scale(0.9)';
+        card.style.opacity = '0';
+        card.style.zIndex = '5';
+      } else {
+        card.style.transform = 'translateX(100%) scale(0.9)';
+        card.style.opacity = '0';
+        card.style.zIndex = '5';
+      }
+    });
+  }
 
-  track.addEventListener('mouseleave', () => {
-    isDown = false;
-    track.classList.remove('active');
-  });
+  function nextCard() {
+    currentIndex = (currentIndex + 1) % cards.length;
+    showCard(currentIndex);
+  }
 
-  track.addEventListener('mouseup', () => {
-    isDown = false;
-    track.classList.remove('active');
-  });
+  function prevCard() {
+    currentIndex = (currentIndex - 1 + cards.length) % cards.length;
+    showCard(currentIndex);
+  }
 
-  track.addEventListener('mousemove', (e) => {
-    if (!isDown) return;
-    e.preventDefault();
-    const x = e.pageX - track.offsetLeft;
-    const walk = (x - startX) * 1.5; // speed multiplier
-    track.scrollLeft = scrollLeft - walk;
+  // Initial display
+  showCard(currentIndex);
+
+  // Optional: Add click events for testing
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'ArrowRight') nextCard();
+    if (e.key === 'ArrowLeft') prevCard();
   });
-</script>
+</script
