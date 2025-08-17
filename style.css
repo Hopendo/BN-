@@ -25,10 +25,11 @@
   border-radius:50%;
   border-color: black;
   object-fit:cover;
+  overflow:hidden;
 }
 @keyframes spin{
-  to { transform: rotate(0deg);}
-  from{ transform: rotate(360deg);}
+  0%{ transform: rotate(0deg);}
+  100%{ transform: rotate(360deg);}
 }
 .tracklist-wrapper{
   font-family: Times New Roman;
